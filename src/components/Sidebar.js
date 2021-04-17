@@ -4,13 +4,13 @@ const Sidebar = () => (
   <div class="flex flex-auto flex-col flex-shrink-0 min-h-screen text-gray-800 antialiased bg-gray-50">
     <div class="fixed left-0 top-0 flex flex-col h-full bg-gray-900 shadow-lg">
       <div class="flex flex-col m-4 h-20 text-center">
-        <h2 class="mb-2 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
+        <h2 class="mb-4 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
           Blocks
         </h2>
         <input
           type="search"
           name="q"
-          class="mb-2 pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
+          class="mb-4 pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
           placeholder="Search..."
           autocomplete="off"
         />
