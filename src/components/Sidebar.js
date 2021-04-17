@@ -2,15 +2,15 @@ import React from "react";
 
 const Sidebar = () => (
   <>
-    <div class="flex flex-col max-h-screen bg-gray-900 shadow-lg w-auto">
-      <div class="flex flex-col m-4 h-20 text-center">
+    <div class="flex flex-col max-h-screen bg-gray-900 shadow-lg">
+      <div class="flex flex-col m-4 h-20 text-center h-auto">
         <h2 class="mb-4 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
-          Blocks
+          GitHub Workflow Builder
         </h2>
         <input
           type="search"
           name="q"
-          class="mb-4 pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
+          class="pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
           placeholder="Search..."
           autocomplete="off"
         />
