@@ -3,17 +3,13 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div style={{ height: "100vh" }}>
-      <Sidebar />
-      <header>
-        <a
-          className="logo"
-          href="https://github.com/JustinASmith/gh-workflow-builder"
-        >
-          GH Workflow Builder
-        </a>
-      </header>
-      <FlowView />
+    <div class="flex flex-row">
+      <div class="flex-1">
+        <Sidebar />
+      </div>
+      <div class="flex-2 w-full min-h-screen">
+        <FlowView />
+      </div>
     </div>
   );
 }

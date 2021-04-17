@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Sidebar = () => (
-  <div class="flex flex-auto flex-col flex-shrink-0 min-h-screen text-gray-800 antialiased bg-gray-50">
-    <div class="fixed left-0 top-0 flex flex-col h-full bg-gray-900 shadow-lg">
+  <>
+    <div class="flex flex-col max-h-screen bg-gray-900 shadow-lg w-auto">
       <div class="flex flex-col m-4 h-20 text-center">
         <h2 class="mb-4 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
           Blocks
@@ -255,7 +255,7 @@ const Sidebar = () => (
         </ul>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default Sidebar;
