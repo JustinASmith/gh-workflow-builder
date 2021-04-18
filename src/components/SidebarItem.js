@@ -9,7 +9,7 @@ const SidebarItem = ({ title, type, ghType, subtitle }) => {
     event.dataTransfer.setData("application/subtitle", subtitle);
   };
 
-  if (title !== null && type !== null && ghType !== null) {
+  if (title && type && ghType && subtitle) {
     return (
       <li
         class={`dndnode ${type}`}
@@ -34,8 +34,6 @@ const SidebarItem = ({ title, type, ghType, subtitle }) => {
         </div>
       </li>
     );
-  } else {
-    return <></>;
   }
 };
 
