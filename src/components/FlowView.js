@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-
 import ReactFlow, {
   ReactFlowProvider,
   removeElements,
@@ -8,10 +7,21 @@ import ReactFlow, {
   Controls,
   Background,
 } from "react-flow-renderer";
+import { Easing, Tween, autoPlay } from "es6-tween";
 
 // import localforage from "localforage";
 import initialElements from "../data/initial-elements";
+import {
+  eventSvg,
+  stepsSvg,
+  buildSvg,
+  deploySvg,
+  enlargeSvg,
+} from "../components/SvgAssets";
 
+autoPlay(true);
+const TRANSITION_TIME = 300;
+const EASING = Easing.Quadratic.Out;
 let flowKey = "gh-workflow-builder";
 
 const onDragOver = (event) => {
@@ -31,6 +41,24 @@ const FlowView = () => {
   const onConnect = (params) => setElements((els) => addEdge(params, els));
   const onLoad = (_reactFlowInstance) =>
     setReactFlowInstance(_reactFlowInstance);
+
+  const handleTransform = useCallback(
+    (transform) => () => {
+      const {
+        position: [x, y],
+        zoom,
+      } = reactFlowInstance.toObject();
+
+      new Tween({ x: x, y: y, zoom })
+        .to(transform, TRANSITION_TIME)
+        .easing(EASING)
+        .on("update", ({ x, y, zoom }) =>
+          reactFlowInstance.setTransform({ x, y, zoom })
+        )
+        .start();
+    },
+    [reactFlowInstance]
+  );
 
   const onDrop = (event) => {
     event.preventDefault();
@@ -53,21 +81,7 @@ const FlowView = () => {
             label: (
               <>
                 <div class="flex flex-row justify-start">
-                  <span class="mr-2 mb-2">
-                    <svg
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 32 32"
-                    >
-                      <title>power</title>
-                      <path
-                        fill="yellow"
-                        d="M12 0l-12 16h12l-8 16 28-20h-16l12-12z"
-                      ></path>
-                    </svg>
-                  </span>
+                  <span class="mr-2 mb-2">{eventSvg}</span>
                   <strong>{title}</strong>
                 </div>
                 {subtitle}
@@ -77,8 +91,81 @@ const FlowView = () => {
           style: {
             background: "#1F2937",
             color: "#eee",
-            border: "1px solid #FFFF99 ",
-            width: 180,
+            border: "1px solid #F59E0B ",
+            width: 175,
+          },
+        };
+        setElements((es) => es.concat(newNode));
+      } else if (type === "default" && ghType === "step") {
+        const newNode = {
+          id: getId(),
+          type,
+          position,
+          data: {
+            label: (
+              <>
+                <div class="flex flex-col justify-start">
+                  {/* <span class="mr-2 mb-2">{stepsSvg}</span> */}
+                  <span>Step:</span>
+                  <strong>{title}</strong>
+                  {subtitle}
+                </div>
+              </>
+            ),
+          },
+          style: {
+            background: "#1F2937",
+            color: "#eee",
+            border: "1px solid #818CF8 ",
+            width: 175,
+          },
+        };
+        setElements((es) => es.concat(newNode));
+      } else if (type === "default" && ghType === "build") {
+        const newNode = {
+          id: getId(),
+          type,
+          position,
+          data: {
+            label: (
+              <>
+                <div class="flex flex-row justify-start">
+                  <span class="mr-2 mb-2">{buildSvg}</span>
+                  <strong>{title}</strong>
+                </div>
+                {subtitle}
+              </>
+            ),
+          },
+          style: {
+            background: "#1F2937",
+            color: "#eee",
+            border: "1px solid #9CA3AF ",
+            width: 175,
+          },
+        };
+        setElements((es) => es.concat(newNode));
+      } else if (type === "output" && ghType === "deploy") {
+        const newNode = {
+          id: getId(),
+          type,
+          position,
+          data: {
+            label: (
+              <>
+                <div class="flex flex-row justify-start">
+                  <span class="mr-2 mb-2">{deploySvg}</span>
+                  <strong>{title}</strong>
+                </div>
+                {subtitle}
+              </>
+            ),
+          },
+          style: {
+            background: "#1F2937",
+            color: "#eee",
+            border: "1px solid #10B981 ",
+            width: 175,
           },
         };
         setElements((es) => es.concat(newNode));
@@ -116,7 +203,7 @@ const FlowView = () => {
             onDragOver={onDragOver}
             className="bg-gray-900"
             defaultZoom={1.25}
-            defaultPosition={[150, 75]}
+            defaultPosition={[250, 175]}
           >
             <MiniMap
               nodeStrokeColor={(n) => {
@@ -134,7 +221,14 @@ const FlowView = () => {
               }}
               nodeBorderRadius={2}
             />
-            <Controls />
+            <Controls>
+              <div
+                className="react-flow__controls-button"
+                onClick={handleTransform({ x: 0, y: 0, zoom: 1 })}
+              >
+                {enlargeSvg}
+              </div>
+            </Controls>
             <Background color="#aaa" gap={16} />
           </ReactFlow>
         </div>
