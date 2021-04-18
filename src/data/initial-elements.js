@@ -76,6 +76,7 @@ const initialElements = [
   },
   {
     id: '4',
+    type: 'output',
     data: {
       label: (
         <>
