@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div class="flex flex-row">
+    <div className="flex flex-row">
       <Sidebar />
       {/* <div class="w-full min-h-screen"> */}
       <FlowView />
