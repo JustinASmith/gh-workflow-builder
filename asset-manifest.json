@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gh-workflow-builder/static/css/main.39effba0.chunk.css",
+    "main.js": "/gh-workflow-builder/static/js/main.ed93c085.chunk.js",
+    "main.js.map": "/gh-workflow-builder/static/js/main.ed93c085.chunk.js.map",
+    "runtime-main.js": "/gh-workflow-builder/static/js/runtime-main.0a3a1777.js",
+    "runtime-main.js.map": "/gh-workflow-builder/static/js/runtime-main.0a3a1777.js.map",
+    "static/js/2.21c80700.chunk.js": "/gh-workflow-builder/static/js/2.21c80700.chunk.js",
+    "static/js/2.21c80700.chunk.js.map": "/gh-workflow-builder/static/js/2.21c80700.chunk.js.map",
+    "static/js/3.f42acad7.chunk.js": "/gh-workflow-builder/static/js/3.f42acad7.chunk.js",
+    "static/js/3.f42acad7.chunk.js.map": "/gh-workflow-builder/static/js/3.f42acad7.chunk.js.map",
+    "index.html": "/gh-workflow-builder/index.html",
+    "static/css/main.39effba0.chunk.css.map": "/gh-workflow-builder/static/css/main.39effba0.chunk.css.map",
+    "static/js/2.21c80700.chunk.js.LICENSE.txt": "/gh-workflow-builder/static/js/2.21c80700.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0a3a1777.js",
+    "static/js/2.21c80700.chunk.js",
+    "static/css/main.39effba0.chunk.css",
+    "static/js/main.ed93c085.chunk.js"
+  ]
+}
