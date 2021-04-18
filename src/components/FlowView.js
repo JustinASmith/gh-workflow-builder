@@ -169,15 +169,6 @@ const FlowView = () => {
           },
         };
         setElements((es) => es.concat(newNode));
-      } else {
-        const newNode = {
-          id: getId(),
-          type,
-          position,
-          data: { label: `${type} node` },
-        };
-
-        setElements((es) => es.concat(newNode));
       }
     }
   };
@@ -208,9 +199,9 @@ const FlowView = () => {
             <MiniMap
               nodeStrokeColor={(n) => {
                 if (n.style?.background) return n.style.background;
-                if (n.type === "input") return "#0041d0";
-                if (n.type === "output") return "#ff0072";
-                if (n.type === "default") return "#1a192b";
+                if (n.type === "input") return "#F59E0B";
+                if (n.type === "output") return "#10B981";
+                if (n.type === "default") return "#818CF8";
 
                 return "#eee";
               }}

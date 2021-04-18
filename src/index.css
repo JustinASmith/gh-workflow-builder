@@ -66,6 +66,18 @@ header select {
   color: #f8f8f8;
 }
 
+.react-flow__node-input .react-flow__handle {
+  background: #F59E0B !important;
+}
+
+.react-flow__node-default .react-flow__handle {
+  background: #818CF8 !important;
+}
+
+.react-flow__node-output .react-flow__handle {
+  background: #10B981 !important;
+}
+
 .react-flow__node-selectorNode {
   font-size: 12px;
   background: #f0f2f3;
@@ -106,7 +118,7 @@ header select {
 .dndflow .dndnode {
   height: 20px;
   padding: 4px;
-  border: 1px solid #1a192b;
+  border: 1px solid #818CF8;
   border-radius: 2px;
   margin-bottom: 10px;
   display: flex;
@@ -116,11 +128,11 @@ header select {
 }
 
 .dndflow .dndnode.input {
-  border-color: #0041d0;
+  border-color: #F59E0B;
 }
 
 .dndflow .dndnode.output {
-  border-color: #ff0072;
+  border-color: #10B981;
 }
 
 .dndflow .reactflow-wrapper {
