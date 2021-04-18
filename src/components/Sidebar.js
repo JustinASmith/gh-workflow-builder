@@ -1,31 +1,32 @@
 import React from "react";
+import SidebarItem from '../components/SidebarItem'
 
-const Sidebar = () => (
-  <>
-    <div class="flex flex-col max-h-screen bg-gray-900 shadow-lg w-auto">
-      <div class="flex flex-col m-4 h-20 text-center">
-        <h2 class="mb-4 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
-          Blocks
+const Sidebar = () => {
+  return (<>
+    <div className="flex flex-col max-h-screen bg-gray-800 shadow-lg custom-scrollbar">
+      <div className="flex flex-col m-4 h-20 text-center h-auto">
+        <h2 className="mb-4 text-left text-gray-200 font-sans text-xl font-bold tracking-wide">
+          GitHub Workflow Builder
         </h2>
         <input
           type="search"
           name="q"
-          class="mb-4 pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
+          className="pl-10 py-2 text-gray-700 focus:text-gray-900 text-sm bg-gray-300 focus:bg-white rounded-md focus:outline-none"
           placeholder="Search..."
-          autocomplete="off"
+          autoComplete="off"
         />
       </div>
-      <div class="flex-grow overflow-x-hidden overflow-y-auto">
-        <ul class="flex flex-col py-6 space-y-1">
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
-                <p>Triggers</p>
+      <div className="flex-grow overflow-x-hidden overflow-y-auto">
+        <ul className="flex flex-col py-6 space-y-1">
+          <li className="px-4">
+            <div className="flex flex-row items-center h-8">
+              <div className="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
+                <p>Events</p>
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 32 32"
                 >
                   <title>power</title>
@@ -37,65 +38,45 @@ const Sidebar = () => (
               </div>
             </div>
           </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Pull Request
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Push
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Release
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Label
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Schedule
-              </span>
-            </a>
-          </li>
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
+          <SidebarItem
+            title="Pull Request"
+            type="input"
+            ghType="event"
+            subtitle="When a new pull request targets the main branch"
+          />
+          <SidebarItem
+            title="Push"
+            type="input"
+            ghType="event"
+            subtitle="When a new new commit is pushed"
+          />
+          <SidebarItem
+            title="Release"
+            type="input"
+            ghType="event"
+            subtitle="When a new release is published"
+          />
+          <SidebarItem
+            title="Label"
+            type="input"
+            ghType="event"
+            subtitle="When a new label is created"
+          />
+          <SidebarItem
+            title="Schedule"
+            type="input"
+            ghType="event"
+            subtitle="When a cron job is triggered"
+          />
+          <li className="px-4 pt-2">
+            <div className="flex flex-row items-center h-8">
+              <div className="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
                 Steps
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 32 32"
                 >
                   <title>list-numbered</title>
@@ -107,70 +88,39 @@ const Sidebar = () => (
               </div>
             </div>
           </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Checkout
-              </span>
-              <span class="px-2 py-0.5">
-                <svg
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 32 32"
-                >
-                  <title>question</title>
-                  <path
-                    fill="#aaaaaa"
-                    d="M14 22h4v4h-4zM22 8c1.105 0 2 0.895 2 2v6l-6 4h-4v-2l6-4v-2h-10v-4h12zM16 3c-3.472 0-6.737 1.352-9.192 3.808s-3.808 5.72-3.808 9.192c0 3.472 1.352 6.737 3.808 9.192s5.72 3.808 9.192 3.808c3.472 0 6.737-1.352 9.192-3.808s3.808-5.72 3.808-9.192c0-3.472-1.352-6.737-3.808-9.192s-5.72-3.808-9.192-3.808zM16 0v0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z"
-                  ></path>
-                </svg>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Install
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Lint
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Test
-              </span>
-            </a>
-          </li>
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
+          <SidebarItem
+            title="Checkout Repository"
+            type="default"
+            ghType="step"
+            subtitle="Checkout the git repository"
+          />
+          <SidebarItem
+            title="Install Dependencies"
+            type="default"
+            ghType="step"
+            subtitle="Install project dependencies"
+          />
+          <SidebarItem
+            title="Lint"
+            type="default"
+            ghType="step"
+            subtitle="Perform static analysis on codebase"
+          />
+          <SidebarItem
+            title="Test"
+            type="default"
+            ghType="step"
+            subtitle="Run automated test suites"
+          />
+          <li className="px-4 pt-2">
+            <div className="flex flex-row items-center h-8">
+              <div className="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
                 Build
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 32 32"
                 >
                   <title>cogs</title>
@@ -182,45 +132,33 @@ const Sidebar = () => (
               </div>
             </div>
           </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Make
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Node
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Jekyll
-              </span>
-            </a>
-          </li>
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
+          <SidebarItem
+            title="Make Build"
+            type="default"
+            ghType="step"
+            subtitle="Build project using Make"
+          />
+          <SidebarItem
+            title="Node Build"
+            type="default"
+            ghType="step"
+            subtitle="Build project using Node"
+          />
+          <SidebarItem
+            title="Jekyll"
+            type="default"
+            ghType="step"
+            subtitle="Build project using Jekyll"
+          />
+          <li className="px-4 pt-2">
+            <div className="flex flex-row items-center h-8">
+              <div className="flex flex-row items-center justify-between my-4 w-full text-gray-300 font-sans text-sm font-semibold uppercase">
                 <p>Deploy</p>
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 32 32"
                 >
                   <title>rocket</title>
@@ -232,30 +170,22 @@ const Sidebar = () => (
               </div>
             </div>
           </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                GitHub Pages
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="relative flex flex-row items-center pr-6 h-11 hover:text-gray-200 text-gray-500 hover:bg-gray-700 border-l-4 hover:border-blue-500 border-transparent focus:outline-none"
-            >
-              <span class="ml-6 font-sans text-sm font-semibold tracking-wide truncate">
-                Firebase
-              </span>
-            </a>
-          </li>
+          <SidebarItem
+            title="GitHub Pages"
+            type="default"
+            ghType="step"
+            subtitle="Deploy project to GitHub Pages"
+          />
+          <SidebarItem
+            title="Firebase"
+            type="default"
+            ghType="step"
+            subtitle="Deploy project to Firebase Hosting"
+          />
         </ul>
       </div>
     </div>
-  </>
-);
+  </>);
+};
 
 export default Sidebar;
