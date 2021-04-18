@@ -2,7 +2,7 @@
 
 Visual node-based editor for GitHub Action Workflow creation without the need to write YAML files. Visual platform to siplify the building, testing, packaging, releasing, and deploying of software.
 
-![GHWB-0418](https://user-images.githubusercontent.com/28692620/115137476-f61a9400-9feb-11eb-9bfb-445588c2c6c3.PNG)
+![GHWB-0418](https://user-images.githubusercontent.com/28692620/115151617-4a953200-a033-11eb-86ec-cdd745a55e0c.PNG)
 
 ## Bootstraped with Create React App
 
