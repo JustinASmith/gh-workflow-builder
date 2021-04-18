@@ -182,7 +182,7 @@ const FlowView = () => {
   // }, [reactFlowInstance]);
 
   return (
-    <div class="flex-auto dndflow">
+    <div class="flex-auto dndflow relative">
       <ReactFlowProvider>
         <div className="reactflow-wrapper">
           <ReactFlow
@@ -224,6 +224,15 @@ const FlowView = () => {
           </ReactFlow>
         </div>
       </ReactFlowProvider>
+      <div className="absolute top-0 right-0">
+        <button
+          type="button"
+          class="text-sm py-2 px-4 m-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md focus:outline-none z-10"
+          tabindex="-1"
+        >
+          Export Workflow
+        </button>
+      </div>
     </div>
   );
 };
