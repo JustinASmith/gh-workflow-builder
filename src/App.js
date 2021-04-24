@@ -5,9 +5,7 @@ function App() {
   return (
     <div className="flex flex-row">
       <Sidebar />
-      {/* <div class="w-full min-h-screen"> */}
       <FlowView />
-      {/* </div> */}
     </div>
   );
 }
