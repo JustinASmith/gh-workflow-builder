@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   eventSvg,
-  stepsSvg,
   buildSvg,
   deploySvg,
 } from "../components/SvgAssets";
@@ -13,8 +12,8 @@ const initialElements = [
     data: {
       label: (
         <>
-          <div class="flex flex-row justify-start">
-            <span class="mr-2 mb-2">
+          <div className="flex flex-row justify-start">
+            <span className="mr-2 mb-2">
               {eventSvg}
             </span>
             <strong>Pull Request</strong>
@@ -36,8 +35,8 @@ const initialElements = [
     data: {
       label: (
         <>
-          <div class="flex flex-col justify-start">
-            {/* <span class="mr-2 mb-2">{stepsSvg}</span> */}
+          <div className="flex flex-col justify-start">
+            {/* <span className="mr-2 mb-2">{stepsSvg}</span> */}
             <span>Step:</span>
             <strong>Automated Tests</strong>
             Runs automated test suite
@@ -59,8 +58,8 @@ const initialElements = [
     data: {
       label: (
         <>
-          <div class="flex flex-row justify-start">
-            <span class="mr-2 mb-2">{buildSvg}</span>
+          <div className="flex flex-row justify-start">
+            <span className="mr-2 mb-2">{buildSvg}</span>
             <strong>Node.js</strong>
           </div>
           Build Node.js project using Webpack or Rollup
@@ -80,8 +79,8 @@ const initialElements = [
     data: {
       label: (
         <>
-          <div class="flex flex-row justify-start">
-            <span class="mr-2 mb-2">{deploySvg}</span>
+          <div className="flex flex-row justify-start">
+            <span className="mr-2 mb-2">{deploySvg}</span>
             <strong>GitHub Pages</strong>
           </div>
           Deploy project to GitHub Pages

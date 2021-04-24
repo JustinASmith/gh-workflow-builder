@@ -13,7 +13,6 @@ import { Easing, Tween, autoPlay } from "es6-tween";
 import initialElements from "../data/initial-elements";
 import {
   eventSvg,
-  stepsSvg,
   buildSvg,
   deploySvg,
   enlargeSvg,
@@ -22,7 +21,7 @@ import {
 autoPlay(true);
 const TRANSITION_TIME = 300;
 const EASING = Easing.Quadratic.Out;
-let flowKey = "gh-workflow-builder";
+// let flowKey = "gh-workflow-builder";
 
 const onDragOver = (event) => {
   event.preventDefault();
@@ -80,8 +79,8 @@ const FlowView = () => {
           data: {
             label: (
               <>
-                <div class="flex flex-row justify-start">
-                  <span class="mr-2 mb-2">{eventSvg}</span>
+                <div className="flex flex-row justify-start">
+                  <span className="mr-2 mb-2">{eventSvg}</span>
                   <strong>{title}</strong>
                 </div>
                 {subtitle}
@@ -104,8 +103,8 @@ const FlowView = () => {
           data: {
             label: (
               <>
-                <div class="flex flex-col justify-start">
-                  {/* <span class="mr-2 mb-2">{stepsSvg}</span> */}
+                <div className="flex flex-col justify-start">
+                  {/* <span className="mr-2 mb-2">{stepsSvg}</span> */}
                   <span>Step:</span>
                   <strong>{title}</strong>
                   {subtitle}
@@ -129,8 +128,8 @@ const FlowView = () => {
           data: {
             label: (
               <>
-                <div class="flex flex-row justify-start">
-                  <span class="mr-2 mb-2">{buildSvg}</span>
+                <div className="flex flex-row justify-start">
+                  <span className="mr-2 mb-2">{buildSvg}</span>
                   <strong>{title}</strong>
                 </div>
                 {subtitle}
@@ -153,8 +152,8 @@ const FlowView = () => {
           data: {
             label: (
               <>
-                <div class="flex flex-row justify-start">
-                  <span class="mr-2 mb-2">{deploySvg}</span>
+                <div className="flex flex-row justify-start">
+                  <span className="mr-2 mb-2">{deploySvg}</span>
                   <strong>{title}</strong>
                 </div>
                 {subtitle}
@@ -182,7 +181,7 @@ const FlowView = () => {
   // }, [reactFlowInstance]);
 
   return (
-    <div class="flex-auto dndflow relative">
+    <div className="flex-auto dndflow relative">
       <ReactFlowProvider>
         <div className="reactflow-wrapper">
           <ReactFlow
@@ -224,11 +223,12 @@ const FlowView = () => {
           </ReactFlow>
         </div>
       </ReactFlowProvider>
-      <div className="absolute top-0 right-0">
+      <div className="absolute top-0 right-0 z-10">
         <button
           type="button"
-          class="text-sm py-2 px-4 m-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md focus:outline-none z-10"
-          tabindex="-1"
+          className="text-sm py-2 px-4 m-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md focus:outline-none"
+          tabIndex="-1"
+          onClick={() => console.log("test")}
         >
           Export Workflow
         </button>
